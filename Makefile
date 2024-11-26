@@ -1,13 +1,31 @@
+# Makefile
+DOCKER_ID_USER ?= jenniferli6
+IMAGE_NAME ?= de_demo
+VERSION ?= latest
+
+# Default target - runs when you just type 'make'
+.PHONY: all
+all: clean install test build push
+
+# Docker commands
+build:
+	docker build -t $(DOCKER_ID_USER)/$(IMAGE_NAME):$(VERSION) .
+
+push:
+	docker push $(DOCKER_ID_USER)/$(IMAGE_NAME):$(VERSION)
+
+run:
+	docker run -p 5001:5000 $(DOCKER_ID_USER)/$(IMAGE_NAME):$(VERSION)
+
+# Development commands
 install:
-	pip install --upgrade pip && pip install -r requirements.txt
+	pip install -r requirements.txt
 
-format:
-	black *.py
+test:
+	python -m pytest
 
-lint:
-	pylint --disable=R,C --ignore-patterns=test_.*?py *.py
+clean:
+	find . -type d -name "__pycache__" -exec rm -r {} +
+	find . -type f -name "*.pyc" -delete
 
-test: 
-	python -m pytest -cov=main test_main.py
-
-all: install format lint test
+.PHONY: build push run install test clean
