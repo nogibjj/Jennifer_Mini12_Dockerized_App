@@ -1,4 +1,4 @@
-
+[![Build and Push Docker Image](https://github.com/nogibjj/Jennifer_Mini12_Dockerized_App/actions/workflows/CI.yml/badge.svg)](https://github.com/nogibjj/Jennifer_Mini12_Dockerized_App/actions/workflows/CI.yml)
 
 # Mini12 Dockerized Meal Planner Application
 
@@ -58,32 +58,36 @@ pip install -r requirements.txt
 python app.py
 ```
 
+![alt text](images/image-2.png)
+
 5. Access & use the App
 
-1) Click the link `http://localhost:5001` to visit the application
-![alt text](image-3.png)
+5.1 Click the link `http://localhost:5001` to visit the application
 
-2) Click `Available Meals" to browse the available meals for breakfast, lunch and dinner, with detailed nutritional information.
-![alt text](image-4.png)
+![alt text](images/image-3.png)
 
-3) Input the **Number of Days** you want to generate the meal plans for, and then click the **Generate Plan**.
-![alt text](image-5.png)
+5.2 Click **Available Meals** to browse the available meals for breakfast, lunch and dinner, with detailed nutritional information.
 
-4) View the generated meal plan for the days, along with **Total Daily Calories** shown.
-![alt text](image-6.png)
+![alt text](images/image-4.png)
+
+5.3 Enter the **Number of Days** for which you want to generate meal plans, then click **Generate Plan**.
+
+![alt text](images/image-5.png)
+
+5.4 View the generated meal plan and **Total Daily Calories**.
+
+![alt text](images/image-6.png)
+
+
 
 ## Dockerhub Image
 
 The application image is available on Docker Hub: 
 [Docker Hub repository](https://hub.docker.com/r/jenniferli6/de_demo/tags)
 
-![alt text](image.png)
+![alt text](images/image.png)
 
-![alt text](image-1.png)
-
-## API Endpoints
-
-![alt text](image-2.png)
+![alt text](images/image-1.png)
 
 
 ## Testing
@@ -92,6 +96,7 @@ Run the tests using:
 ```bash
 python -m pytest test_app.py
 ```
+![alt text](images/image-7.png)
 
 ## Continuous Integration
 
